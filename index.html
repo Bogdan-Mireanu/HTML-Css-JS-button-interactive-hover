@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <button>
+                <span>Hover me</span>
+                <div></div>
+            </button>
+
+            <button>
+                <span>Hover me</span>
+                <div></div>
+            </button>
+        </main>
+        <div class="support">
+            <a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+        </div>
+        
+        <script>
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                const div = button.querySelector('div');
+                ['mouseenter', 'mouseleave'].forEach((event)=>{
+                    button.addEventListener(event, (e)=>{
+                        div.style.left = `${e.offsetX}px`;
+                        div.style.top = `${e.offsetY}px`; 
+                    })
+                })
+            })
+        </script>
+    </body>
+</html>
